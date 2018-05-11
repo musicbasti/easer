@@ -190,7 +190,7 @@ body {background-image:url('pink_rice.png');}
         function listCentres()
         {
             selectHTML="";
-            gapi.client.sheets.spreadsheets.get({spreadsheetId: '1YB4tLKv3CAW1IGog1Mru6xg6-SjPuuMzivnHV-sE5zM'}).then(function(response) {
+            gapi.client.sheets.spreadsheets.get({spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs'}).then(function(response) {
                     var range = response.result;
                     var sheetsnum=range.sheets;
                         selectHTML='<select name="value" id="selectCenter" class="dropdown" onchange="setCenter(this.value)"><option>Select Center</option>';
@@ -224,7 +224,7 @@ body {background-image:url('pink_rice.png');}
                   return false;
               }
       	gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1YB4tLKv3CAW1IGog1Mru6xg6-SjPuuMzivnHV-sE5zM',
+          spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs',
           range: centerName+"!b7:ZZZ",
         }).then(function(response) {
           studList = response.result;
@@ -252,7 +252,7 @@ body {background-image:url('pink_rice.png');}
       	studListIdx = studListIdx+1; //this pre-increment to updating the sheet, takes care of mapping from programmer's index to user's index as well
       	//write to drive at idx=studlistidx,colIdx:----------------------------://
 //      	gapi.client.sheets.spreadsheets.values.update({
-//      	  spreadsheetId: '1YB4tLKv3CAW1IGog1Mru6xg6-SjPuuMzivnHV-sE5zM',
+//      	  spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs',
 //          range: centerName+"!"+getLiteral(colIdx)+(studListIdx+baseRow-1),
 //          valueInputOption: 'RAW',
 //          values: [ [val] ]
@@ -306,7 +306,7 @@ body {background-image:url('pink_rice.png');}
             }
         
         gapi.client.sheets.spreadsheets.values.update({
-      	  spreadsheetId: '1YB4tLKv3CAW1IGog1Mru6xg6-SjPuuMzivnHV-sE5zM',
+      	  spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs',
           range: centerName+"!"+getLiteral(colIdx)+(baseRow),
           valueInputOption: 'RAW',
           values: AllValues
@@ -336,7 +336,7 @@ body {background-image:url('pink_rice.png');}
 
                        colIdx = baseCol+studList.values[0].length;
 //                    gapi.client.sheets.spreadsheets.values.update({
-//                      spreadsheetId: '1YB4tLKv3CAW1IGog1Mru6xg6-SjPuuMzivnHV-sE5zM',
+//                      spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs',
 //                      range: centerName+"!"+getLiteral(colIdx)+baseRow,
 //                      valueInputOption: 'RAW',
 //                      values: [ [val] ]
