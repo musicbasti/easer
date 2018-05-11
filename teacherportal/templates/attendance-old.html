@@ -228,7 +228,7 @@ body {background-image:url('pink_rice.png');}
         function listCentres()
         {
             selectHTML="";
-            gapi.client.sheets.spreadsheets.get({spreadsheetId: '1V3r6o0vDwdhWyon-j9qeKDtzqyvZpTI_EmATZtFlJDU'}).then(function(response) {
+            gapi.client.sheets.spreadsheets.get({spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs'}).then(function(response) {
                     var range = response.result;
                     var sheetsnum=range.sheets;
                         selectHTML='<select name="value" id="selectCenter" class="dropdown" onchange="setCenter(this.value)"><option>Select Center</option>';
@@ -262,7 +262,7 @@ body {background-image:url('pink_rice.png');}
                   return false;
               }
       	gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1V3r6o0vDwdhWyon-j9qeKDtzqyvZpTI_EmATZtFlJDU',
+          spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs',
           range: centerName+"!b7:ZZZ",
         }).then(function(response) {
           studList = response.result;
@@ -344,7 +344,7 @@ body {background-image:url('pink_rice.png');}
             }
         
         gapi.client.sheets.spreadsheets.values.update({
-      	  spreadsheetId: '1V3r6o0vDwdhWyon-j9qeKDtzqyvZpTI_EmATZtFlJDU',
+      	  spreadsheetId: '1S4uCWRva-NnLrx-NoSdS0nrL7TBXADIUo0Chc_2seQs',
           range: centerName+"!"+getLiteral(colIdx)+(baseRow),
           valueInputOption: 'RAW',
           values: AllValues
